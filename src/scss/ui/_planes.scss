@@ -1,0 +1,44 @@
+@use '../custom' as *;
+@use 'utils/mixins' as m; //le agregue un alias a el mixins
+
+.planes{
+    h2{
+        @include m.headingBorder($white, $primary);
+    }
+}
+
+.plan{
+    padding: 16rem 4rem 4rem 4rem;
+    border-bottom: 1px solid #e1e1e1;
+
+    @include media-breakpoint-up(md){
+        border: none;
+        @include transition(transform 300ms ease);
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+    .precio{
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &.inicio{
+        @include m.bgIcono('../img/icono_inicio.svg');
+    }
+    &.negocio{
+        @include m.bgIcono('../img/icono_negocio.svg');
+        @include media-breakpoint-up(md){
+            margin-top:-5rem ;
+            margin-bottom: -5rem;
+            border-radius: 2rem;
+            z-index: 100;
+            padding-top: 21rem;
+            background-position-y:  7rem;
+        }
+    }
+    &.pro{
+        @include m.bgIcono('../img/icono_pro.svg');
+    }
+}

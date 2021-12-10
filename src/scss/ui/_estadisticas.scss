@@ -1,0 +1,8 @@
+@use '../custom' as *;
+@use 'utils/mixins' as m; //le agregue un alias a el mixins
+
+.estadisticas{
+    h2{
+        @include m.headingBorder($secondary, $primary);
+    }
+}
